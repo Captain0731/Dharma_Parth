@@ -1,0 +1,345 @@
+* {
+  box-sizing: border-box;
+}
+
+.resume-analysis-section {
+  padding: 120px 80px;
+  background: linear-gradient(180deg, #f7f9ff, #fbfcff);
+  min-height: 100vh;
+  width: 100%;
+  overflow-x: hidden;
+}
+
+.resume-analysis-wrapper {
+  max-width: 1400px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.resume-analysis-header {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.resume-analysis-tag {
+  display: inline-block;
+  background: rgba(79, 124, 255, 0.15);
+  color: #4f7cff;
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-weight: 700;
+  font-size: 13px;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.resume-analysis-header h1 {
+  font-size: 52px;
+  font-weight: 800;
+  color: #1f2b6c;
+  margin-bottom: 16px;
+}
+
+.resume-analysis-subtitle {
+  font-size: 18px;
+  color: #6b74c9;
+  max-width: 700px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+.upload-section {
+  margin-bottom: 50px;
+}
+
+.upload-card {
+  background: rgba(255, 255, 255, 0.55);
+  backdrop-filter: blur(22px);
+  border-radius: 24px;
+  padding: 60px;
+  border: 1.5px solid rgba(255, 255, 255, 0.35);
+  box-shadow: 0 30px 70px rgba(31, 38, 135, 0.16);
+  text-align: center;
+}
+
+.upload-area {
+  margin-bottom: 30px;
+}
+
+.upload-icon {
+  font-size: 64px;
+  margin-bottom: 20px;
+}
+
+.upload-area h3 {
+  font-size: 28px;
+  font-weight: 800;
+  color: #1f2b6c;
+  margin-bottom: 10px;
+}
+
+.upload-area p {
+  font-size: 16px;
+  color: #6b7280;
+  margin-bottom: 24px;
+}
+
+.upload-button {
+  display: inline-block;
+  padding: 14px 32px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border-radius: 30px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 8px 20px rgba(102, 126, 234, 0.3);
+}
+
+.upload-button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 30px rgba(102, 126, 234, 0.4);
+}
+
+.file-name {
+  margin-top: 16px;
+  color: #10b981;
+  font-weight: 600;
+}
+
+.analyze-btn {
+  padding: 18px 50px;
+  font-size: 18px;
+  font-weight: 700;
+  color: white;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 10px 30px rgba(102, 126, 234, 0.3);
+}
+
+.analyze-btn:hover:not(:disabled) {
+  transform: translateY(-3px);
+  box-shadow: 0 15px 40px rgba(102, 126, 234, 0.4);
+}
+
+.analyze-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.analysis-results {
+  margin-top: 40px;
+}
+
+.result-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 40px;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.result-header h2 {
+  font-size: 36px;
+  font-weight: 800;
+  color: #1f2b6c;
+}
+
+.strength-score {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  padding: 20px 35px;
+  border-radius: 24px;
+  text-align: center;
+  box-shadow: 0 10px 30px rgba(102, 126, 234, 0.3);
+}
+
+.score-value {
+  display: block;
+  font-size: 48px;
+  font-weight: 900;
+  line-height: 1;
+}
+
+.score-label {
+  display: block;
+  font-size: 14px;
+  font-weight: 600;
+  margin-top: 8px;
+  opacity: 0.9;
+}
+
+.results-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 24px;
+}
+
+.result-card {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(20px);
+  border-radius: 24px;
+  padding: 30px;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+}
+
+.result-card.warning {
+  border: 2px solid rgba(239, 68, 68, 0.3);
+  background: rgba(239, 68, 68, 0.05);
+}
+
+.result-card.recommendations {
+  grid-column: span 2;
+}
+
+.result-card h3 {
+  font-size: 20px;
+  font-weight: 800;
+  color: #1a1a2e;
+  margin-bottom: 20px;
+}
+
+.skills-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.skill-chip {
+  padding: 8px 16px;
+  background: linear-gradient(135deg, rgba(102, 126, 234, 0.1), rgba(118, 75, 162, 0.1));
+  color: #667eea;
+  border-radius: 20px;
+  font-size: 14px;
+  font-weight: 600;
+  border: 1px solid rgba(102, 126, 234, 0.2);
+}
+
+.experience-badge {
+  display: inline-block;
+  padding: 12px 24px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border-radius: 20px;
+  font-size: 18px;
+  font-weight: 700;
+  margin-bottom: 12px;
+}
+
+.career-matches {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.match-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.match-role {
+  font-weight: 600;
+  color: #1a1a2e;
+  min-width: 150px;
+}
+
+.match-bar {
+  flex: 1;
+  height: 24px;
+  background: #e5e7eb;
+  border-radius: 12px;
+  position: relative;
+  overflow: hidden;
+}
+
+.match-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #667eea 0%, #764ba2 100%);
+  border-radius: 12px;
+  transition: width 0.5s ease;
+}
+
+.match-percent {
+  position: absolute;
+  right: 8px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 12px;
+  font-weight: 700;
+  color: #1a1a2e;
+}
+
+.gaps-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.gap-chip {
+  padding: 8px 16px;
+  background: rgba(239, 68, 68, 0.1);
+  color: #dc2626;
+  border-radius: 20px;
+  font-size: 14px;
+  font-weight: 600;
+  border: 1px solid rgba(239, 68, 68, 0.2);
+}
+
+.recommendations-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.recommendations-list li {
+  padding: 12px 0;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+  color: #4b5563;
+  line-height: 1.6;
+}
+
+.recommendations-list li:last-child {
+  border-bottom: none;
+}
+
+.recommendations-list li::before {
+  content: "→ ";
+  color: #667eea;
+  font-weight: 700;
+  margin-right: 8px;
+}
+
+@media (max-width: 768px) {
+  .resume-analysis-section {
+    padding: 80px 20px;
+  }
+
+  .resume-analysis-header h1 {
+    font-size: 36px;
+  }
+
+  .upload-card {
+    padding: 40px 24px;
+  }
+
+  .result-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .results-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .result-card.recommendations {
+    grid-column: span 1;
+  }
+}
+

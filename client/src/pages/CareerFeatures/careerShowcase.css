@@ -1,0 +1,386 @@
+* {
+  box-sizing: border-box;
+}
+
+/* ===== SECTION ===== */
+.ps-section {
+  padding: 120px 80px;
+  background: linear-gradient(180deg, #f7f9ff, #fbfcff);
+  width: 100%;
+  overflow-x: hidden;
+  box-sizing: border-box;
+}
+
+/* ===== GLASS CARD WRAPPER ===== */
+.ps-wrapper {
+  max-width: 1500px;
+  margin: 0 auto;
+
+  display: grid;
+  grid-template-columns: 1fr 1.15fr; /* LEFT content | RIGHT image */
+  gap: 80px;
+  align-items: center;
+
+  background: rgba(255, 255, 255, 0.55);
+  backdrop-filter: blur(22px) saturate(180%);
+  -webkit-backdrop-filter: blur(22px) saturate(180%);
+
+  margin-top: -200px;
+
+  border-radius: 48px;
+  border: 1.5px solid rgba(255,255,255,0.35);
+
+  padding: 60px;
+  box-shadow:
+    0 25px 60px rgba(31,38,135,0.14),
+    inset 0 1px 2px rgba(255,255,255,0.6);
+
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* ===== LEFT CONTENT ===== */
+.ps-content {
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.ps-location {
+  font-size: 14px;
+  color: #6b74c9;
+  display: block;
+  margin-bottom: 8px;
+}
+
+.ps-content h2 {
+  font-size: 42px;
+  font-weight: 800;
+  color: #1f2b6c;
+  margin: 12px 0;
+  line-height: 1.2;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+
+.ps-content h3 {
+  font-size: 30px;
+  font-weight: 800;
+  color: #64c99b;
+  margin-bottom: 28px;
+  line-height: 1.2;
+}
+
+/* ===== STATS ===== */
+.ps-stats {
+  display: flex;
+  gap: 18px;
+  margin-bottom: 26px;
+  flex-wrap: wrap;
+}
+
+.ps-stat {
+  background: rgba(79,124,255,0.12);
+  backdrop-filter: blur(10px);
+  border-radius: 16px;
+  padding: 16px 20px;
+  min-width: 130px;
+  text-align: center;
+  flex: 1 1 auto;
+  box-sizing: border-box;
+}
+
+.ps-stat strong {
+  display: block;
+  font-size: 18px;
+  color: #1f2b6c;
+}
+
+.ps-stat span {
+  font-size: 13px;
+  color: #4f63d8;
+}
+
+/* ===== DESCRIPTION ===== */
+.ps-desc {
+  font-size: 15px;
+  line-height: 1.8;
+  color: #6b74c9;
+  max-width: 520px;
+  margin-bottom: 32px;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+
+/* ===== ACTION BUTTONS ===== */
+.ps-actions {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+.ps-btn {
+  border: none;
+  cursor: pointer;
+  font-weight: 700;
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+}
+
+.ps-btn.primary {
+  background: #1f2b6c;
+  color: #fff;
+  padding: 14px 24px;
+  box-shadow: 0 8px 24px rgba(31,38,135,0.25);
+  flex: 1 1 auto;
+}
+
+.ps-btn.secondary {
+  background: #6fa8ff;
+  color: #fff;
+  padding: 14px 18px;
+  flex-shrink: 0;
+}
+
+.ps-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 28px rgba(31,38,135,0.3);
+}
+
+.ps-btn:active {
+  transform: translateY(0);
+}
+
+/* ===== RIGHT IMAGE (GLASS) ===== */
+.ps-image {
+  position: relative;
+  border-radius: 40px;
+  overflow: hidden;
+
+  background: rgba(255,255,255,0.45);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+
+  border: 1.5px solid rgba(255,255,255,0.35);
+  box-shadow:
+    0 25px 60px rgba(31,38,135,0.14),
+    inset 0 1px 2px rgba(255,255,255,0.6);
+
+  width: 100%;
+  min-height: 400px;
+  box-sizing: border-box;
+}
+
+.ps-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* ===== FOR SALE BADGE ===== */
+.ps-badge {
+  position: absolute;
+  top: 18px;
+  left: 18px;
+  background: #64c99b;
+  color: #fff;
+  font-size: 13px;
+  font-weight: 700;
+  padding: 6px 14px;
+  border-radius: 8px;
+  z-index: 2;
+}
+
+/* ===== RESPONSIVE - TABLET ===== */
+@media (max-width: 1024px) {
+  .ps-section {
+    padding: 80px 40px;
+  }
+
+  .ps-wrapper {
+    grid-template-columns: 1fr;
+    gap: 50px;
+    padding: 50px;
+    margin-top: -60px;
+  }
+
+  .ps-content {
+    order: 1;
+  }
+
+  .ps-image {
+    order: 2;
+    min-height: 350px;
+    border-radius: 32px;
+  }
+
+  .ps-content h2 {
+    font-size: 34px;
+  }
+
+  .ps-content h3 {
+    font-size: 26px;
+  }
+}
+
+/* ===== RESPONSIVE - MOBILE ===== */
+@media (max-width: 768px) {
+  .ps-section {
+    padding: 60px 20px;
+    width: 100%;
+    overflow-x: hidden;
+  }
+
+  .ps-wrapper {
+    padding: 36px 28px;
+    gap: 32px;
+    border-radius: 32px;
+    margin-top: -40px;
+  }
+
+  .ps-content h2 {
+    font-size: 26px;
+    line-height: 1.25;
+    margin: 10px 0;
+  }
+
+  .ps-content h3 {
+    font-size: 22px;
+    margin-bottom: 20px;
+  }
+
+  .ps-stats {
+    flex-direction: column;
+    gap: 12px;
+    margin-bottom: 20px;
+  }
+
+  .ps-stat {
+    min-width: auto;
+    width: 100%;
+    padding: 14px 18px;
+  }
+
+  .ps-stat strong {
+    font-size: 16px;
+  }
+
+  .ps-stat span {
+    font-size: 12px;
+  }
+
+  .ps-desc {
+    font-size: 14px;
+    line-height: 1.6;
+    max-width: 100%;
+    margin-bottom: 28px;
+  }
+
+  .ps-actions {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .ps-btn.primary {
+    width: 100%;
+    justify-content: center;
+    padding: 12px 20px;
+    font-size: 14px;
+  }
+
+  .ps-btn.secondary {
+    width: 100%;
+    justify-content: center;
+    padding: 12px 20px;
+  }
+
+  .ps-image {
+    min-height: 280px;
+    border-radius: 24px;
+  }
+
+  .ps-badge {
+    font-size: 12px;
+    padding: 5px 12px;
+    top: 14px;
+    left: 14px;
+  }
+}
+
+/* ===== RESPONSIVE - SMALL MOBILE ===== */
+@media (max-width: 480px) {
+  .ps-section {
+    padding: 50px 15px;
+  }
+
+  .ps-wrapper {
+    padding: 28px 20px;
+    gap: 24px;
+    border-radius: 24px;
+    margin-top: -30px;
+  }
+
+  .ps-content h2 {
+    font-size: 22px;
+  }
+
+  .ps-content h3 {
+    font-size: 19px;
+  }
+
+  .ps-desc {
+    font-size: 13px;
+  }
+
+  .ps-btn.primary,
+  .ps-btn.secondary {
+    padding: 11px 18px;
+    font-size: 13px;
+    border-radius: 12px;
+  }
+
+  .ps-image {
+    min-height: 240px;
+    border-radius: 20px;
+  }
+}
+
+/* ===== EXTRA SMALL MOBILE ===== */
+@media (max-width: 360px) {
+  .ps-section {
+    padding: 40px 12px;
+  }
+
+  .ps-wrapper {
+    padding: 24px 18px;
+    gap: 20px;
+    border-radius: 20px;
+  }
+
+  .ps-content h2 {
+    font-size: 20px;
+  }
+
+  .ps-content h3 {
+    font-size: 17px;
+  }
+
+  .ps-image {
+    min-height: 220px;
+  }
+}
+
+/* ===== TOUCH DEVICE OPTIMIZATION ===== */
+@media (hover: none) and (pointer: coarse) {
+  .ps-btn:hover {
+    transform: none;
+  }
+
+  .ps-btn:active {
+    transform: scale(0.98);
+  }
+}

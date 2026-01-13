@@ -1,0 +1,402 @@
+* {
+  box-sizing: border-box;
+}
+
+.market-insights-section {
+  padding: 120px 80px;
+  background: linear-gradient(180deg, #f7f9ff, #fbfcff);
+  min-height: 100vh;
+  width: 100%;
+  overflow-x: hidden;
+}
+
+.market-insights-wrapper {
+  max-width: 1400px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.market-insights-header {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.market-insights-tag {
+  display: inline-block;
+  background: rgba(79, 124, 255, 0.15);
+  color: #4f7cff;
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-weight: 700;
+  font-size: 13px;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.market-insights-header h1 {
+  font-size: 52px;
+  font-weight: 800;
+  color: #1f2b6c;
+  margin-bottom: 16px;
+}
+
+.market-insights-subtitle {
+  font-size: 18px;
+  color: #6b74c9;
+  max-width: 700px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+.insights-controls {
+  background: rgba(255, 255, 255, 0.55);
+  backdrop-filter: blur(22px);
+  border-radius: 24px;
+  padding: 30px;
+  margin-bottom: 40px;
+  border: 1.5px solid rgba(255, 255, 255, 0.35);
+  box-shadow: 0 20px 60px rgba(31, 38, 135, 0.16);
+}
+
+.control-group {
+  margin-bottom: 24px;
+}
+
+.control-group:last-child {
+  margin-bottom: 0;
+}
+
+.control-group label {
+  display: block;
+  font-size: 16px;
+  font-weight: 700;
+  color: #1a1a2e;
+  margin-bottom: 12px;
+}
+
+.career-select {
+  width: 100%;
+  padding: 14px 18px;
+  border: 2px solid #e5e7eb;
+  border-radius: 12px;
+  font-size: 16px;
+  font-weight: 600;
+  color: #1a1a2e;
+  background: white;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.career-select:focus {
+  outline: none;
+  border-color: #667eea;
+  box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+}
+
+.city-filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.city-filter-btn {
+  padding: 10px 20px;
+  border: 2px solid #e5e7eb;
+  background: white;
+  border-radius: 25px;
+  font-size: 14px;
+  font-weight: 600;
+  color: #4b5563;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.city-filter-btn:hover {
+  border-color: #667eea;
+  color: #667eea;
+}
+
+.city-filter-btn.active {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border-color: transparent;
+}
+
+.insights-content {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.insights-summary {
+  text-align: center;
+}
+
+.insights-summary h2 {
+  font-size: 36px;
+  font-weight: 800;
+  color: #1f2b6c;
+  margin-bottom: 8px;
+}
+
+.insights-summary p {
+  font-size: 16px;
+  color: #6b7280;
+}
+
+.city-insights-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 24px;
+}
+
+.city-card {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(20px);
+  border-radius: 24px;
+  padding: 28px;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+  transition: all 0.3s ease;
+}
+
+.city-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.2);
+}
+
+.city-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  padding-bottom: 16px;
+  border-bottom: 2px solid rgba(0, 0, 0, 0.05);
+}
+
+.city-header h3 {
+  font-size: 22px;
+  font-weight: 800;
+  color: #1a1a2e;
+}
+
+.trend-icon {
+  font-size: 24px;
+}
+
+.city-stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.stat-card {
+  text-align: center;
+  padding: 12px;
+  background: rgba(102, 126, 234, 0.05);
+  border-radius: 12px;
+}
+
+.stat-label {
+  display: block;
+  font-size: 11px;
+  color: #6b7280;
+  margin-bottom: 6px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.stat-value {
+  display: block;
+  font-size: 16px;
+  font-weight: 800;
+  color: #1a1a2e;
+}
+
+.stat-value.demand {
+  font-size: 14px;
+}
+
+.stat-value.salary {
+  font-size: 15px;
+  color: #667eea;
+}
+
+.stat-value.jobs {
+  font-size: 18px;
+}
+
+.demand-indicator {
+  height: 6px;
+  background: #e5e7eb;
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+.demand-bar {
+  height: 100%;
+  border-radius: 3px;
+  transition: width 0.5s ease;
+}
+
+.skill-heatmap {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(20px);
+  border-radius: 24px;
+  padding: 40px;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+}
+
+.skill-heatmap h2 {
+  font-size: 28px;
+  font-weight: 800;
+  color: #1a1a2e;
+  margin-bottom: 30px;
+}
+
+.heatmap-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+  margin-bottom: 20px;
+}
+
+.heatmap-item {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.skill-name {
+  font-size: 14px;
+  font-weight: 700;
+  color: #1a1a2e;
+  text-align: center;
+}
+
+.heatmap-bars {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-around;
+  height: 120px;
+  gap: 4px;
+}
+
+.heatmap-bar {
+  flex: 1;
+  min-height: 8px;
+  border-radius: 4px 4px 0 0;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.heatmap-bar:hover {
+  opacity: 0.8;
+}
+
+.heatmap-legend {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  font-size: 12px;
+  color: #6b7280;
+}
+
+.heatmap-legend span {
+  padding: 4px 12px;
+  background: rgba(0, 0, 0, 0.05);
+  border-radius: 8px;
+}
+
+.salary-comparison {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(20px);
+  border-radius: 24px;
+  padding: 40px;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+}
+
+.salary-comparison h2 {
+  font-size: 28px;
+  font-weight: 800;
+  color: #1a1a2e;
+  margin-bottom: 30px;
+}
+
+.comparison-chart {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.comparison-item {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.city-label {
+  min-width: 120px;
+  font-weight: 700;
+  color: #1a1a2e;
+  font-size: 15px;
+}
+
+.salary-bar-container {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.salary-bar {
+  flex: 1;
+  height: 32px;
+  background: linear-gradient(90deg, #667eea 0%, #764ba2 100%);
+  border-radius: 16px;
+  transition: width 0.5s ease;
+}
+
+.salary-text {
+  min-width: 100px;
+  font-weight: 700;
+  color: #667eea;
+  font-size: 14px;
+  text-align: right;
+}
+
+@media (max-width: 768px) {
+  .market-insights-section {
+    padding: 80px 20px;
+  }
+
+  .market-insights-header h1 {
+    font-size: 36px;
+  }
+
+  .city-insights-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .city-stats {
+    grid-template-columns: 1fr;
+  }
+
+  .heatmap-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .comparison-item {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .salary-bar-container {
+    width: 100%;
+  }
+}
+

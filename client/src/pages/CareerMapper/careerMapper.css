@@ -1,0 +1,981 @@
+* {
+  box-sizing: border-box;
+}
+
+.careermapper-section {
+  padding: 120px 80px;
+  background: linear-gradient(180deg, #f7f9ff, #fbfcff);
+  min-height: 100vh;
+  width: 100%;
+  overflow-x: hidden;
+  box-sizing: border-box;
+}
+
+.careermapper-wrapper {
+  max-width: 1400px;
+  margin: 0 auto;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* ===== HEADER ===== */
+.careermapper-header {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.careermapper-tag {
+  display: inline-block;
+  background: rgba(79,124,255,0.15);
+  color: #4f7cff;
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-weight: 700;
+  font-size: 13px;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.careermapper-header h1 {
+  font-size: 52px;
+  font-weight: 800;
+  color: #1f2b6c;
+  margin-bottom: 16px;
+}
+
+.careermapper-subtitle {
+  font-size: 18px;
+  color: #6b74c9;
+  max-width: 700px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+/* ===== MAPPER CARDS ===== */
+.careermapper-content {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  margin-bottom: 50px;
+}
+
+.mapper-card {
+  background: rgba(255,255,255,0.55);
+  backdrop-filter: blur(22px);
+  -webkit-backdrop-filter: blur(22px);
+  border-radius: 24px;
+  padding: 40px;
+  border: 1.5px solid rgba(255,255,255,0.35);
+  box-shadow:
+    0 30px 70px rgba(31,38,135,0.16),
+    inset 0 1px 2px rgba(255,255,255,0.6);
+}
+
+.mapper-card h3 {
+  font-size: 28px;
+  font-weight: 800;
+  color: #1f2b6c;
+  margin-bottom: 8px;
+}
+
+.card-subtitle {
+  font-size: 15px;
+  color: #6b74c9;
+  margin-bottom: 30px;
+}
+
+/* ===== SKILL TAGS ===== */
+.skill-tags,
+.interest-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.skill-tag,
+.interest-tag {
+  padding: 12px 24px;
+  border: 2px solid rgba(79,124,255,0.2);
+  background: rgba(255,255,255,0.7);
+  border-radius: 30px;
+  font-size: 15px;
+  font-weight: 600;
+  color: #4f7cff;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.skill-tag:hover,
+.interest-tag:hover {
+  border-color: #4f7cff;
+  background: rgba(79,124,255,0.1);
+  transform: translateY(-2px);
+}
+
+.skill-tag.active,
+.interest-tag.active {
+  background: linear-gradient(135deg, #4f7cff, #6b8eff);
+  color: white;
+  border-color: #4f7cff;
+  box-shadow: 0 8px 20px rgba(79,124,255,0.3);
+}
+
+/* ===== EXPERIENCE OPTIONS ===== */
+.experience-options {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+}
+
+.exp-option {
+  padding: 30px 20px;
+  border: 2px solid rgba(79,124,255,0.2);
+  background: rgba(255,255,255,0.7);
+  border-radius: 20px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+
+.exp-option:hover {
+  border-color: #4f7cff;
+  background: rgba(79,124,255,0.05);
+  transform: translateY(-4px);
+  box-shadow: 0 12px 30px rgba(31,38,135,0.15);
+}
+
+.exp-option.active {
+  background: linear-gradient(135deg, rgba(79,124,255,0.15), rgba(107,142,255,0.1));
+  border-color: #4f7cff;
+  box-shadow: 0 8px 25px rgba(79,124,255,0.25);
+}
+
+.exp-icon {
+  font-size: 36px;
+}
+
+.exp-label {
+  font-size: 15px;
+  font-weight: 600;
+  color: #1f2b6c;
+}
+
+.exp-option.active .exp-label {
+  color: #4f7cff;
+}
+
+/* ===== CTA BUTTON ===== */
+.careermapper-cta {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.map-btn {
+  padding: 18px 50px;
+  font-size: 18px;
+  font-weight: 700;
+  color: white;
+  background: linear-gradient(135deg, #4f7cff, #6b8eff);
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 10px 30px rgba(79,124,255,0.3);
+  margin-bottom: 16px;
+}
+
+.map-btn:hover:not(:disabled) {
+  transform: translateY(-3px);
+  box-shadow: 0 15px 40px rgba(79,124,255,0.4);
+}
+
+.map-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+.cta-hint {
+  font-size: 14px;
+  color: #6b74c9;
+}
+
+/* ===== INFO CARDS ===== */
+.careermapper-info {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+}
+
+.info-card {
+  background: rgba(255,255,255,0.55);
+  backdrop-filter: blur(22px);
+  -webkit-backdrop-filter: blur(22px);
+  border-radius: 24px;
+  padding: 35px 30px;
+  border: 1.5px solid rgba(255,255,255,0.35);
+  box-shadow:
+    0 30px 70px rgba(31,38,135,0.16),
+    inset 0 1px 2px rgba(255,255,255,0.6);
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+.info-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 40px 90px rgba(31,38,135,0.22);
+}
+
+.info-icon {
+  font-size: 48px;
+  margin-bottom: 20px;
+}
+
+.info-card h4 {
+  font-size: 20px;
+  font-weight: 800;
+  color: #1f2b6c;
+  margin-bottom: 12px;
+}
+
+.info-card p {
+  font-size: 15px;
+  line-height: 1.6;
+  color: #6b74c9;
+}
+
+/* ===== BACK BUTTON ===== */
+.back-btn {
+  display: inline-flex;
+  align-items: center;
+  padding: 10px 20px;
+  background: rgba(255,255,255,0.7);
+  border: 2px solid rgba(79,124,255,0.2);
+  border-radius: 25px;
+  color: #4f7cff;
+  font-weight: 600;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-bottom: 30px;
+}
+
+.back-btn:hover {
+  background: rgba(79,124,255,0.1);
+  border-color: #4f7cff;
+  transform: translateX(-5px);
+}
+
+/* ===== CAREER RESULTS ===== */
+.career-results {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  margin-bottom: 40px;
+}
+
+.career-match-card {
+  background: rgba(255,255,255,0.55);
+  backdrop-filter: blur(22px);
+  -webkit-backdrop-filter: blur(22px);
+  border-radius: 24px;
+  padding: 40px;
+  border: 1.5px solid rgba(255,255,255,0.35);
+  box-shadow:
+    0 30px 70px rgba(31,38,135,0.16),
+    inset 0 1px 2px rgba(255,255,255,0.6);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.career-match-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 40px 90px rgba(31,38,135,0.22);
+}
+
+.match-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 25px;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.match-header h2 {
+  font-size: 32px;
+  font-weight: 800;
+  color: #1f2b6c;
+  margin: 0;
+}
+
+.match-score {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: linear-gradient(135deg, #4f7cff, #6b8eff);
+  color: white;
+  padding: 15px 25px;
+  border-radius: 20px;
+  box-shadow: 0 8px 20px rgba(79,124,255,0.3);
+}
+
+.score-value {
+  font-size: 36px;
+  font-weight: 900;
+  line-height: 1;
+}
+
+.score-label {
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-top: 5px;
+}
+
+.match-details {
+  margin-bottom: 25px;
+}
+
+.salary-preview {
+  background: rgba(79,124,255,0.05);
+  padding: 20px;
+  border-radius: 15px;
+  border-left: 4px solid #4f7cff;
+}
+
+.salary-preview strong {
+  display: block;
+  color: #1f2b6c;
+  margin-bottom: 12px;
+  font-size: 16px;
+}
+
+.salary-ranges {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.salary-ranges span {
+  color: #6b74c9;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.view-roadmap-btn {
+  width: 100%;
+  padding: 15px 30px;
+  background: linear-gradient(135deg, #4f7cff, #6b8eff);
+  color: white;
+  border: none;
+  border-radius: 15px;
+  font-size: 16px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 8px 20px rgba(79,124,255,0.3);
+}
+
+.view-roadmap-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 30px rgba(79,124,255,0.4);
+}
+
+/* ===== ROADMAP CONTAINER ===== */
+.roadmap-container {
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+}
+
+.roadmap-section {
+  background: rgba(255,255,255,0.55);
+  backdrop-filter: blur(22px);
+  -webkit-backdrop-filter: blur(22px);
+  border-radius: 24px;
+  padding: 40px;
+  border: 1.5px solid rgba(255,255,255,0.35);
+  box-shadow:
+    0 30px 70px rgba(31,38,135,0.16),
+    inset 0 1px 2px rgba(255,255,255,0.6);
+}
+
+.section-title {
+  font-size: 28px;
+  font-weight: 800;
+  color: #1f2b6c;
+  margin-bottom: 25px;
+}
+
+/* ===== SALARY INSIGHTS ===== */
+.salary-disclaimer {
+  font-size: 13px;
+  color: #6b74c9;
+  font-style: italic;
+  margin-bottom: 25px;
+}
+
+.salary-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+}
+
+.salary-card {
+  background: linear-gradient(135deg, rgba(79,124,255,0.1), rgba(107,142,255,0.05));
+  padding: 25px;
+  border-radius: 20px;
+  text-align: center;
+  border: 2px solid rgba(79,124,255,0.2);
+  transition: transform 0.3s ease;
+}
+
+.salary-card:hover {
+  transform: translateY(-5px);
+  border-color: #4f7cff;
+  box-shadow: 0 10px 30px rgba(79,124,255,0.2);
+}
+
+.salary-level {
+  font-size: 14px;
+  color: #6b74c9;
+  font-weight: 600;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.salary-amount {
+  font-size: 24px;
+  font-weight: 800;
+  color: #1f2b6c;
+}
+
+/* ===== ROADMAP LEVELS ===== */
+.roadmap-levels {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.roadmap-level {
+  background: rgba(255,255,255,0.4);
+  border-radius: 20px;
+  padding: 30px;
+  border: 2px solid rgba(79,124,255,0.1);
+}
+
+.level-header {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  margin-bottom: 20px;
+  padding-bottom: 15px;
+  border-bottom: 2px solid rgba(79,124,255,0.1);
+}
+
+.level-header.beginner {
+  border-bottom-color: rgba(34, 197, 94, 0.3);
+}
+
+.level-header.intermediate {
+  border-bottom-color: rgba(251, 191, 36, 0.3);
+}
+
+.level-header.advanced {
+  border-bottom-color: rgba(239, 68, 68, 0.3);
+}
+
+.level-number {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  font-size: 24px;
+  font-weight: 900;
+  color: white;
+  background: linear-gradient(135deg, #4f7cff, #6b8eff);
+}
+
+.level-header h3 {
+  font-size: 22px;
+  font-weight: 800;
+  color: #1f2b6c;
+  margin: 0;
+}
+
+.skill-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.skill-list li {
+  padding: 12px 20px;
+  margin-bottom: 10px;
+  background: rgba(255,255,255,0.7);
+  border-radius: 12px;
+  border-left: 4px solid #4f7cff;
+  color: #1f2b6c;
+  font-size: 15px;
+  transition: transform 0.2s ease;
+}
+
+.skill-list li:hover {
+  transform: translateX(5px);
+  background: rgba(79,124,255,0.05);
+}
+
+.skill-list li::before {
+  content: "✓ ";
+  color: #4f7cff;
+  font-weight: 700;
+  margin-right: 8px;
+}
+
+/* ===== LEARNING RESOURCES ===== */
+.resource-note {
+  font-size: 13px;
+  color: #6b74c9;
+  font-style: italic;
+  margin-bottom: 25px;
+}
+
+.resources-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+}
+
+.resource-category {
+  background: rgba(255,255,255,0.4);
+  padding: 25px;
+  border-radius: 20px;
+  border: 2px solid rgba(79,124,255,0.1);
+}
+
+.resource-category h3 {
+  font-size: 20px;
+  font-weight: 800;
+  color: #1f2b6c;
+  margin-bottom: 20px;
+}
+
+.resource-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.resource-list li {
+  padding: 12px 15px;
+  margin-bottom: 10px;
+  background: rgba(255,255,255,0.7);
+  border-radius: 10px;
+  color: #1f2b6c;
+  font-size: 14px;
+  border-left: 3px solid #4f7cff;
+}
+
+/* ===== ROADMAP ACTIONS ===== */
+.roadmap-actions {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  flex-wrap: wrap;
+  padding: 30px;
+  background: rgba(255,255,255,0.3);
+  border-radius: 20px;
+}
+
+.download-btn,
+.start-over-btn {
+  padding: 15px 35px;
+  font-size: 16px;
+  font-weight: 700;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.download-btn {
+  background: linear-gradient(135deg, #4f7cff, #6b8eff);
+  color: white;
+  box-shadow: 0 8px 20px rgba(79,124,255,0.3);
+}
+
+.download-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 30px rgba(79,124,255,0.4);
+}
+
+.start-over-btn {
+  background: rgba(255,255,255,0.8);
+  color: #4f7cff;
+  border: 2px solid #4f7cff;
+}
+
+.start-over-btn:hover {
+  background: rgba(79,124,255,0.1);
+  transform: translateY(-3px);
+}
+
+/* ===== RESPONSIVE - TABLET ===== */
+@media (max-width: 1024px) {
+  .careermapper-section {
+    padding: 100px 40px;
+  }
+
+  .careermapper-header h1 {
+    font-size: 42px;
+  }
+
+  .careermapper-subtitle {
+    font-size: 17px;
+  }
+
+  .mapper-card,
+  .roadmap-section,
+  .career-match-card {
+    padding: 35px;
+  }
+
+  .mapper-card h3 {
+    font-size: 24px;
+  }
+
+  .experience-options {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .info-card {
+    padding: 30px 25px;
+  }
+}
+
+/* ===== RESPONSIVE - MOBILE ===== */
+@media (max-width: 768px) {
+  .careermapper-section {
+    padding: 80px 20px;
+    width: 100%;
+    overflow-x: hidden;
+    min-height: auto;
+  }
+
+  .careermapper-header {
+    margin-bottom: 40px;
+  }
+
+  .careermapper-header h1 {
+    font-size: 32px;
+    line-height: 1.25;
+    margin-bottom: 12px;
+  }
+
+  .careermapper-subtitle {
+    font-size: 15px;
+    line-height: 1.5;
+    max-width: 100%;
+  }
+
+  .careermapper-content {
+    gap: 28px;
+    margin-bottom: 40px;
+  }
+
+  .mapper-card,
+  .roadmap-section,
+  .career-match-card {
+    padding: 28px 24px;
+    border-radius: 20px;
+  }
+
+  .mapper-card h3 {
+    font-size: 20px;
+    margin-bottom: 6px;
+  }
+
+  .card-subtitle {
+    font-size: 14px;
+    margin-bottom: 24px;
+  }
+
+  .experience-options {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .exp-option {
+    padding: 24px 18px;
+  }
+
+  .exp-icon {
+    font-size: 32px;
+  }
+
+  .exp-label {
+    font-size: 14px;
+  }
+
+  .skill-tags,
+  .interest-tags {
+    gap: 8px;
+  }
+
+  .skill-tag,
+  .interest-tag {
+    padding: 10px 18px;
+    font-size: 13px;
+  }
+
+  .map-btn {
+    padding: 15px 40px;
+    font-size: 16px;
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .cta-hint {
+    font-size: 13px;
+  }
+
+  .careermapper-info {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .info-card {
+    padding: 28px 24px;
+  }
+
+  .info-icon {
+    font-size: 40px;
+  }
+
+  .info-card h4 {
+    font-size: 18px;
+  }
+
+  .info-card p {
+    font-size: 14px;
+  }
+
+  .back-btn {
+    padding: 8px 16px;
+    font-size: 13px;
+  }
+
+  .match-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+  }
+
+  .match-header h2 {
+    font-size: 24px;
+  }
+
+  .match-score {
+    align-self: stretch;
+    width: 100%;
+  }
+
+  .score-value {
+    font-size: 32px;
+  }
+
+  .salary-preview {
+    padding: 18px;
+  }
+
+  .salary-ranges {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .salary-cards {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .salary-card {
+    padding: 20px;
+  }
+
+  .section-title {
+    font-size: 22px;
+    margin-bottom: 20px;
+  }
+
+  .roadmap-level {
+    padding: 24px;
+  }
+
+  .level-header {
+    gap: 16px;
+    margin-bottom: 16px;
+  }
+
+  .level-number {
+    width: 44px;
+    height: 44px;
+    font-size: 20px;
+  }
+
+  .level-header h3 {
+    font-size: 18px;
+  }
+
+  .skill-list li {
+    padding: 10px 16px;
+    font-size: 14px;
+    margin-bottom: 8px;
+  }
+
+  .resources-grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .resource-category {
+    padding: 20px;
+  }
+
+  .resource-category h3 {
+    font-size: 18px;
+  }
+
+  .resource-list li {
+    font-size: 13px;
+    padding: 10px 12px;
+  }
+
+  .roadmap-actions {
+    flex-direction: column;
+    gap: 14px;
+    padding: 24px;
+  }
+
+  .download-btn,
+  .start-over-btn {
+    width: 100%;
+    padding: 13px 30px;
+    font-size: 15px;
+  }
+}
+
+/* ===== RESPONSIVE - SMALL MOBILE ===== */
+@media (max-width: 480px) {
+  .careermapper-section {
+    padding: 60px 15px;
+  }
+
+  .careermapper-header h1 {
+    font-size: 26px;
+  }
+
+  .careermapper-subtitle {
+    font-size: 14px;
+  }
+
+  .mapper-card,
+  .roadmap-section,
+  .career-match-card {
+    padding: 24px 20px;
+    border-radius: 18px;
+  }
+
+  .mapper-card h3 {
+    font-size: 18px;
+  }
+
+  .skill-tag,
+  .interest-tag {
+    padding: 8px 14px;
+    font-size: 12px;
+  }
+
+  .exp-option {
+    padding: 20px 16px;
+  }
+
+  .exp-icon {
+    font-size: 28px;
+  }
+
+  .map-btn {
+    padding: 13px 30px;
+    font-size: 15px;
+  }
+
+  .match-header h2 {
+    font-size: 20px;
+  }
+
+  .section-title {
+    font-size: 20px;
+  }
+
+  .salary-card {
+    padding: 18px;
+  }
+
+  .salary-amount {
+    font-size: 20px;
+  }
+
+  .level-header h3 {
+    font-size: 16px;
+  }
+
+  .skill-list li {
+    font-size: 13px;
+  }
+}
+
+/* ===== EXTRA SMALL MOBILE ===== */
+@media (max-width: 360px) {
+  .careermapper-section {
+    padding: 50px 12px;
+  }
+
+  .careermapper-header h1 {
+    font-size: 24px;
+  }
+
+  .mapper-card,
+  .roadmap-section,
+  .career-match-card {
+    padding: 20px 18px;
+  }
+}
+
+/* ===== TOUCH DEVICE OPTIMIZATION ===== */
+@media (hover: none) and (pointer: coarse) {
+  .skill-tag:hover,
+  .interest-tag:hover,
+  .exp-option:hover,
+  .view-roadmap-btn:hover,
+  .download-btn:hover,
+  .start-over-btn:hover,
+  .info-card:hover,
+  .career-match-card:hover,
+  .salary-card:hover {
+    transform: none;
+  }
+
+  .skill-tag:active,
+  .interest-tag:active,
+  .exp-option:active {
+    transform: scale(0.98);
+  }
+}
+

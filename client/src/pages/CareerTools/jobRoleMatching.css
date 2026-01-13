@@ -1,0 +1,340 @@
+* {
+  box-sizing: border-box;
+}
+
+.job-matching-section {
+  padding: 120px 80px;
+  background: linear-gradient(180deg, #f7f9ff, #fbfcff);
+  min-height: 100vh;
+  width: 100%;
+  overflow-x: hidden;
+}
+
+.job-matching-wrapper {
+  max-width: 1400px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.job-matching-header {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.job-matching-tag {
+  display: inline-block;
+  background: rgba(79, 124, 255, 0.15);
+  color: #4f7cff;
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-weight: 700;
+  font-size: 13px;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.job-matching-header h1 {
+  font-size: 52px;
+  font-weight: 800;
+  color: #1f2b6c;
+  margin-bottom: 16px;
+}
+
+.job-matching-subtitle {
+  font-size: 18px;
+  color: #6b74c9;
+  max-width: 700px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+.matching-content {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.matching-card {
+  background: rgba(255, 255, 255, 0.55);
+  backdrop-filter: blur(22px);
+  border-radius: 24px;
+  padding: 45px;
+  border: 1.5px solid rgba(255, 255, 255, 0.35);
+  box-shadow: 0 30px 70px rgba(31, 38, 135, 0.16);
+}
+
+.matching-card h3 {
+  font-size: 28px;
+  font-weight: 800;
+  color: #1f2b6c;
+  margin-bottom: 24px;
+}
+
+.skill-tags,
+.interest-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+}
+
+.skill-tag,
+.interest-tag {
+  padding: 12px 24px;
+  border: 2px solid #e5e7eb;
+  background: #ffffff;
+  border-radius: 30px;
+  font-size: 15px;
+  font-weight: 600;
+  color: #4b5563;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.skill-tag:hover,
+.interest-tag:hover {
+  border-color: #667eea;
+  transform: translateY(-2px);
+}
+
+.skill-tag.active,
+.interest-tag.active {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border-color: transparent;
+}
+
+.experience-options {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 16px;
+}
+
+.exp-option {
+  padding: 16px 20px;
+  border: 2px solid #e5e7eb;
+  background: #ffffff;
+  border-radius: 16px;
+  font-size: 15px;
+  font-weight: 600;
+  color: #4b5563;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.exp-option:hover {
+  border-color: #667eea;
+  transform: translateY(-2px);
+}
+
+.exp-option.active {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border-color: transparent;
+}
+
+.matching-cta {
+  text-align: center;
+}
+
+.match-btn {
+  padding: 20px 60px;
+  font-size: 19px;
+  font-weight: 700;
+  color: white;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.4s ease;
+  box-shadow: 0 15px 40px rgba(102, 126, 234, 0.4);
+}
+
+.match-btn:hover:not(:disabled) {
+  transform: translateY(-4px) scale(1.05);
+  box-shadow: 0 20px 50px rgba(102, 126, 234, 0.5);
+}
+
+.match-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.matches-results {
+  margin-top: 40px;
+}
+
+.matches-results h2 {
+  font-size: 36px;
+  font-weight: 800;
+  color: #1f2b6c;
+  margin-bottom: 32px;
+  text-align: center;
+}
+
+.matches-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 24px;
+}
+
+.match-card {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(20px);
+  border-radius: 24px;
+  padding: 30px;
+  border: 2px solid rgba(255, 255, 255, 0.5);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+  transition: all 0.3s ease;
+}
+
+.match-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.2);
+}
+
+.match-card.ready {
+  border-color: rgba(34, 197, 94, 0.3);
+}
+
+.match-card.not-ready {
+  border-color: rgba(251, 191, 36, 0.3);
+}
+
+.match-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 20px;
+  gap: 16px;
+}
+
+.match-header h3 {
+  font-size: 24px;
+  font-weight: 800;
+  color: #1a1a2e;
+  flex: 1;
+}
+
+.match-badge {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  padding: 12px 20px;
+  border-radius: 16px;
+  text-align: center;
+  min-width: 80px;
+}
+
+.match-percent {
+  display: block;
+  font-size: 28px;
+  font-weight: 900;
+  line-height: 1;
+}
+
+.match-label {
+  display: block;
+  font-size: 11px;
+  font-weight: 600;
+  margin-top: 4px;
+  opacity: 0.9;
+}
+
+.match-status {
+  margin-bottom: 16px;
+}
+
+.status-ready {
+  display: inline-block;
+  padding: 6px 14px;
+  background: rgba(34, 197, 94, 0.1);
+  color: #16a34a;
+  border-radius: 20px;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.status-not-ready {
+  display: inline-block;
+  padding: 6px 14px;
+  background: rgba(251, 191, 36, 0.1);
+  color: #d97706;
+  border-radius: 20px;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.match-salary {
+  margin-bottom: 16px;
+  padding: 12px;
+  background: rgba(102, 126, 234, 0.05);
+  border-radius: 12px;
+}
+
+.match-salary strong {
+  color: #1a1a2e;
+  display: block;
+  margin-bottom: 4px;
+}
+
+.missing-skills {
+  margin-bottom: 20px;
+}
+
+.missing-skills strong {
+  display: block;
+  color: #1a1a2e;
+  margin-bottom: 8px;
+  font-size: 14px;
+}
+
+.skills-gap {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.gap-skill {
+  padding: 6px 12px;
+  background: rgba(239, 68, 68, 0.1);
+  color: #dc2626;
+  border-radius: 16px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.view-details-btn {
+  width: 100%;
+  padding: 14px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border: none;
+  border-radius: 12px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.view-details-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(102, 126, 234, 0.3);
+}
+
+@media (max-width: 768px) {
+  .job-matching-section {
+    padding: 80px 20px;
+  }
+
+  .job-matching-header h1 {
+    font-size: 36px;
+  }
+
+  .matching-card {
+    padding: 30px 24px;
+  }
+
+  .matches-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
