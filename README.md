@@ -1,4 +1,4 @@
-# 🏠 Real Estate Web Application
+# Career Mapping & Development Platform
 
 A full-stack real estate web application built with React (frontend) and Node.js/Express (backend).
 
