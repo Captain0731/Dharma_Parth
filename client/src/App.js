@@ -1,5 +1,6 @@
 import "./App.css";
 import React, { useState, useEffect } from "react";
+import ErrorBoundary from "./components/ErrorBoundary/ErrorBoundary";
 
 // Layout
 import Navbar from "./components/Navbar/navbar";
@@ -44,8 +45,75 @@ import JobRoleMatching from "./pages/CareerTools/JobRoleMatching";
 import MentorBooking from "./pages/CareerTools/MentorBooking";
 import MarketInsights from "./pages/CareerTools/MarketInsights";
 
+// Jobs
+import Jobs from "./pages/Jobs/Jobs";
+import JobApply from "./pages/JobApply/JobApply";
+import JobDetails from "./pages/JobDetails/JobDetails";
+import AIInterview from "./pages/AIInterview/AIInterview";
+
 // Other
 import NotFound from "./pages/NotFound/NotFound";
+
+// HR Dashboard
+import Dashboard from "./pages/Dashboard/Dashboard";
+
+// Additional MetaMask error suppression (backup)
+if (typeof window !== 'undefined') {
+  // Suppress console errors from MetaMask
+  const originalError = console.error;
+  console.error = (...args) => {
+    const errorString = args.map(arg => 
+      typeof arg === 'string' ? arg : 
+      arg?.message || arg?.toString() || ''
+    ).join(' ');
+    
+    if (errorString.includes('MetaMask') || 
+        errorString.includes('Failed to connect') ||
+        errorString.includes('ethereum') ||
+        errorString.includes('chrome-extension://nkbihfbeogaeaoehlefnkodbefgpgknn') ||
+        errorString.includes('inpage.js')) {
+      return; // Suppress MetaMask errors
+    }
+    originalError.apply(console, args);
+  };
+
+  // Catch unhandled promise rejections from MetaMask
+  window.addEventListener('unhandledrejection', (event) => {
+    const reason = event.reason;
+    const errorMessage = (reason?.message || '') + (reason?.toString() || '') + (reason?.stack || '');
+    
+    if (errorMessage.includes('MetaMask') || 
+        errorMessage.includes('Failed to connect') ||
+        errorMessage.includes('ethereum') ||
+        errorMessage.includes('chrome-extension://nkbihfbeogaeaoehlefnkodbefgpgknn') ||
+        errorMessage.includes('inpage.js')) {
+      event.preventDefault();
+      event.stopPropagation();
+      event.stopImmediatePropagation();
+      return false;
+    }
+  }, true);
+
+  // Catch global errors from MetaMask extension
+  window.addEventListener('error', (event) => {
+    const errorMessage = (event.message || '') + 
+                        (event.filename || '') +
+                        (event.error?.message || '') + 
+                        (event.error?.toString() || '') +
+                        (event.error?.stack || '');
+    
+    if (errorMessage.includes('MetaMask') || 
+        errorMessage.includes('Failed to connect') ||
+        errorMessage.includes('ethereum') ||
+        errorMessage.includes('chrome-extension://nkbihfbeogaeaoehlefnkodbefgpgknn') ||
+        errorMessage.includes('inpage.js')) {
+      event.preventDefault();
+      event.stopPropagation();
+      event.stopImmediatePropagation();
+      return false;
+    }
+  }, true);
+}
 
 // Helper to map URL path → internal page key
 const pathToPage = (pathname) => {
@@ -55,6 +123,10 @@ const pathToPage = (pathname) => {
   const validPages = [
     "home",
     "about",
+    "jobs",
+    "job-apply",
+    "job-details",
+    "ai-interview",
     "career-mapper",
     "skill-prediction",
     "resume-analysis",
@@ -70,6 +142,7 @@ const pathToPage = (pathname) => {
     "signin",
     "otp",
     "forgot-password",
+    "dashboard",
   ];
 
   return validPages.includes(slug) ? slug : "home";
@@ -106,7 +179,7 @@ function App() {
   }, []);
 
   // Pages where navbar/footer should NOT appear
-  const hideLayout = ["signin", "signup", "otp", "forgot-password"].includes(page);
+  const hideLayout = ["signin", "signup", "otp", "forgot-password", "dashboard"].includes(page);
 
   // Handle OTP navigation event
   useEffect(() => {
@@ -149,6 +222,18 @@ function App() {
 
       case "about":
         return <AboutGlass />;
+
+      case "jobs":
+        return <Jobs />;
+
+      case "job-apply":
+        return <JobApply />;
+
+      case "job-details":
+        return <JobDetails />;
+
+      case "ai-interview":
+        return <AIInterview />;
 
       case "career-mapper":
         return <CareerMapper />;
@@ -203,23 +288,29 @@ function App() {
       case "forgot-password":
         return <ForgotPassword onBackSignIn={() => setPage("signin")} />;
 
+      // HR Dashboard
+      case "dashboard":
+        return <Dashboard />;
+
       default:
         return <NotFound />;
     }
   };
 
   return (
-    <div className="App">
-      {!hideLayout && (
-        <Navbar onNavClick={handleNavClick} activePage={page} />
-      )}
+    <ErrorBoundary>
+      <div className="App">
+        {!hideLayout && (
+          <Navbar onNavClick={handleNavClick} activePage={page} />
+        )}
 
-      {renderPage()}
+        {renderPage()}
 
-      {!hideLayout && (
-        <FooterGlass onNavClick={handleNavClick} activePage={page} />
-      )}
-    </div>
+        {!hideLayout && (
+          <FooterGlass onNavClick={handleNavClick} activePage={page} />
+        )}
+      </div>
+    </ErrorBoundary>
   );
 }
 

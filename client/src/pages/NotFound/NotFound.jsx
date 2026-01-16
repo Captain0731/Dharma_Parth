@@ -23,7 +23,10 @@ const NotFound = () => {
             <button className="notfound-btn primary" onClick={() => window.location.href = '/'}>
                 Go to Homepage
             </button>
-            <button className="notfound-btn secondary" onClick={() => window.history.back()}>
+            <button className="notfound-btn secondary" onClick={() => {
+              window.scrollTo(0, 0);  // Scroll to top first
+              window.history.back();   // Then navigate back
+            }}>
               Go Back
             </button>
           </div>

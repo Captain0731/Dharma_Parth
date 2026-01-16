@@ -6,7 +6,12 @@ const SignIn = ({ onSignupClick, onForgotPassword }) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
+  const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
+
+  // HR Static credentials
+  const HR_EMAIL = "hirelogic@gmail.com";
+  const HR_PASSWORD = "admin123";
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -14,10 +19,45 @@ const SignIn = ({ onSignupClick, onForgotPassword }) => {
       setError("Please enter both email and password.");
       return;
     }
-    setError("");
-    if (onSignupClick) {
-      onSignupClick("home");
+
+    // Email validation
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(email)) {
+      setError("Please enter a valid email address.");
+      return;
     }
+
+    setError("");
+    setLoading(true);
+
+    // Check if HR credentials
+    const isHRLogin = email.toLowerCase().trim() === HR_EMAIL.toLowerCase() && password === HR_PASSWORD;
+
+    // Simulate login delay
+    setTimeout(() => {
+      if (isHRLogin) {
+        // HR Login - redirect to dashboard
+        localStorage.setItem("hrLoggedIn", "true");
+        localStorage.setItem("hrEmail", email);
+        setLoading(false);
+        // Update URL first
+        window.history.pushState({}, "", "/dashboard");
+        // Trigger page change in App.js by dispatching popstate event
+        window.dispatchEvent(new PopStateEvent("popstate"));
+        // Force a small delay to ensure state updates, then navigate
+        setTimeout(() => {
+          navigate("/dashboard", { replace: true });
+        }, 100);
+      } else {
+        // Regular user login - redirect to home
+        localStorage.setItem("userLoggedIn", "true");
+        localStorage.setItem("userEmail", email);
+        setLoading(false);
+        if (onSignupClick) {
+          onSignupClick("home");
+        }
+      }
+    }, 1000);
   };
 
   return (
@@ -42,6 +82,7 @@ const SignIn = ({ onSignupClick, onForgotPassword }) => {
             <button
               className="back-btn"
               onClick={() => {
+                window.scrollTo(0, 0);  // Scroll to top first
                 // Prefer router history; fall back to state-based navigation
                 if (window.history.length > 1) {
                   navigate(-1);
@@ -59,6 +100,7 @@ const SignIn = ({ onSignupClick, onForgotPassword }) => {
           <h2>Sign In</h2>
           <p className="subtitle">Access your account</p>
           {error && <div className="signin-error">{error}</div>}
+
           <div className="field">
             <label>Email Address</label>
             <div className="input-box">
@@ -68,7 +110,13 @@ const SignIn = ({ onSignupClick, onForgotPassword }) => {
                   <path d="L22 6L12 13L2 6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
                 </svg>
               </span>
-              <input type="email" placeholder="Enter your email" value={email} onChange={e => setEmail(e.target.value)} />
+              <input 
+                type="email" 
+                placeholder="hirelogic@gmail.com" 
+                value={email} 
+                onChange={e => setEmail(e.target.value)}
+                disabled={loading}
+              />
             </div>
           </div>
           <div className="field">
@@ -80,7 +128,13 @@ const SignIn = ({ onSignupClick, onForgotPassword }) => {
                   <path d="M7 11V7C7 5.67392 7.52678 4.40215 8.46447 3.46447C9.40215 2.52678 10.6739 2 12 2C13.3261 2 14.5979 2.52678 15.5355 3.46447C16.4732 4.40215 17 5.67392 17 7V11" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
                 </svg>
               </span>
-              <input type="password" placeholder="Enter your password" value={password} onChange={e => setPassword(e.target.value)} />
+              <input 
+                type="password" 
+                placeholder="Enter your password" 
+                value={password} 
+                onChange={e => setPassword(e.target.value)}
+                disabled={loading}
+              />
             </div>
           </div>
           <div className="forgot-password-link" style={{ textAlign: 'right', marginBottom: '1rem' }}>
@@ -88,8 +142,8 @@ const SignIn = ({ onSignupClick, onForgotPassword }) => {
               Forgot Password?
             </button>
           </div>
-          <button className="submit-btn" onClick={handleSubmit}>
-            Sign In
+          <button className="submit-btn" onClick={handleSubmit} disabled={loading}>
+            {loading ? "Signing in..." : "Sign In"}
           </button>
           <p className="signup-link">
             Don't have an account?{' '}

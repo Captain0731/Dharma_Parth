@@ -63,7 +63,10 @@ const JobRoleMatching = () => {
       <div className="job-matching-wrapper">
         <button 
           className="back-btn" 
-          onClick={() => navigate(-1)}
+          onClick={() => {
+            window.scrollTo(0, 0);  // Scroll to top first
+            navigate(-1);           // Then navigate back
+          }}
           style={{ 
             marginBottom: '1rem', 
             padding: '0.5rem 1rem', 

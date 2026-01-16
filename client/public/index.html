@@ -25,9 +25,148 @@
       Learn how to configure a non-root public URL by running `npm run build`.
     -->
     <title>Smart Skill to Career Mapper</title>
+    <script>
+      // CRITICAL: Run FIRST to block MetaMask before it injects
+      (function() {
+        'use strict';
+        
+        // Block MetaMask ethereum object
+        if (typeof window !== 'undefined') {
+          try {
+            delete window.ethereum;
+          } catch(e) {}
+          
+          Object.defineProperty(window, 'ethereum', {
+            value: undefined,
+            writable: false,
+            configurable: false
+          });
+        }
+      })();
+    </script>
   </head>
   <body>
     <noscript>You need to enable JavaScript to run this app</noscript>
+    <script>
+      // Aggressively suppress MetaMask extension errors (runs before React)
+      (function() {
+        'use strict';
+        
+        // Prevent MetaMask from injecting and causing errors
+        if (typeof window !== 'undefined') {
+          // Override window.ethereum to prevent connection attempts
+          Object.defineProperty(window, 'ethereum', {
+            get: function() {
+              return undefined;
+            },
+            set: function() {
+              // Prevent setting
+            },
+            configurable: false
+          });
+
+          // Suppress all console errors from MetaMask
+          const originalError = console.error;
+          console.error = function() {
+            const args = Array.from(arguments);
+            const errorString = args.map(function(arg) {
+              if (typeof arg === 'string') return arg;
+              if (arg && arg.message) return arg.message;
+              if (arg && arg.toString) return arg.toString();
+              return '';
+            }).join(' ');
+            
+            if (errorString.includes('MetaMask') || 
+                errorString.includes('Failed to connect') ||
+                errorString.includes('ethereum') ||
+                errorString.includes('chrome-extension://nkbihfbeogaeaoehlefnkodbefgpgknn') ||
+                errorString.includes('inpage.js')) {
+              return; // Completely suppress MetaMask errors
+            }
+            originalError.apply(console, arguments);
+          };
+
+          // Suppress console.warn for MetaMask
+          const originalWarn = console.warn;
+          console.warn = function() {
+            const args = Array.from(arguments);
+            const errorString = args.map(function(arg) {
+              if (typeof arg === 'string') return arg;
+              if (arg && arg.message) return arg.message;
+              if (arg && arg.toString) return arg.toString();
+              return '';
+            }).join(' ');
+            
+            if (errorString.includes('MetaMask') || 
+                errorString.includes('ethereum') ||
+                errorString.includes('chrome-extension://nkbihfbeogaeaoehlefnkodbefgpgknn')) {
+              return;
+            }
+            originalWarn.apply(console, arguments);
+          };
+
+          // Aggressively catch unhandled promise rejections
+          window.addEventListener('unhandledrejection', function(event) {
+            var reason = event.reason;
+            var errorMessage = '';
+            
+            if (reason) {
+              errorMessage = (reason.message || '') + 
+                            (reason.toString ? reason.toString() : '') +
+                            (reason.stack || '');
+            }
+            
+            if (errorMessage.includes('MetaMask') || 
+                errorMessage.includes('Failed to connect') ||
+                errorMessage.includes('ethereum') ||
+                errorMessage.includes('chrome-extension://nkbihfbeogaeaoehlefnkodbefgpgknn') ||
+                errorMessage.includes('inpage.js')) {
+              event.preventDefault();
+              event.stopPropagation();
+              event.stopImmediatePropagation();
+              return false;
+            }
+          }, true);
+
+          // Aggressively catch all global errors
+          window.addEventListener('error', function(event) {
+            var errorMessage = (event.message || '') + 
+                              (event.filename || '') +
+                              ((event.error && event.error.message) || '') +
+                              ((event.error && event.error.toString) ? event.error.toString() : '') +
+                              ((event.error && event.error.stack) || '');
+            
+            if (errorMessage.includes('MetaMask') || 
+                errorMessage.includes('Failed to connect') ||
+                errorMessage.includes('ethereum') ||
+                errorMessage.includes('chrome-extension://nkbihfbeogaeaoehlefnkodbefgpgknn') ||
+                errorMessage.includes('inpage.js')) {
+              event.preventDefault();
+              event.stopPropagation();
+              event.stopImmediatePropagation();
+              return false;
+            }
+          }, true);
+
+          // Also catch errors at the window level
+          window.onerror = function(message, source, lineno, colno, error) {
+            var errorMessage = (message || '') + 
+                              (source || '') +
+                              ((error && error.message) || '') +
+                              ((error && error.toString) ? error.toString() : '');
+            
+            if (errorMessage.includes('MetaMask') || 
+                errorMessage.includes('Failed to connect') ||
+                errorMessage.includes('ethereum') ||
+                errorMessage.includes('chrome-extension://nkbihfbeogaeaoehlefnkodbefgpgknn') ||
+                errorMessage.includes('inpage.js')) {
+              return true; // Suppress the error
+            }
+            return false; // Let other errors through
+          };
+        }
+      })();
+    </script>
     <div id="root"></div>
     <!--
       This HTML file is a template.

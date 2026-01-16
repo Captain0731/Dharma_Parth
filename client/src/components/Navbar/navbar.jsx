@@ -93,26 +93,25 @@ const Navbar = ({ onNavClick, activePage }) => {
             </span>
 
             <div className="dropdown-content services-dropdown">
-              <a
-                href="#"
-                className={activePage === "career-mapper" ? "active" : ""}
-                onClick={e => { e.preventDefault(); handleNavClick("career-mapper"); }}
-              >
-                Career Mapper
-              </a>
-
-              {/* Nested dropdown for Career Tools */}
+              {/* Jobs Dropdown */}
               <div className="nested-dropdown">
                 <span className="nested-dropdown-trigger">
-                  Career Tools
+                JobSphere
                 </span>
                 <div className="nested-dropdown-content">
                   <a
                     href="#"
-                    className={activePage === "skill-prediction" ? "active" : ""}
-                    onClick={e => { e.preventDefault(); handleNavClick("skill-prediction"); }}
+                    className={activePage === "job-apply" ? "active" : ""}
+                    onClick={e => { e.preventDefault(); handleNavClick("job-apply"); }}
                   >
-                    AI Skill Prediction
+                    Job Apply
+                  </a>
+                  <a
+                    href="#"
+                    className={activePage === "ai-interview" ? "active" : ""}
+                    onClick={e => { e.preventDefault(); handleNavClick("ai-interview"); }}
+                  >
+                    AI Interview
                   </a>
                   <a
                     href="#"
@@ -130,15 +129,39 @@ const Navbar = ({ onNavClick, activePage }) => {
                   </a>
                   <a
                     href="#"
-                    onClick={e => { e.preventDefault(); handleNavClick("mentor-booking"); }}
-                  >
-                    Mentor Booking
-                  </a>
-                  <a
-                    href="#"
+                    className={activePage === "market-insights" ? "active" : ""}
                     onClick={e => { e.preventDefault(); handleNavClick("market-insights"); }}
                   >
                     Market Insights
+                  </a>
+                </div>
+              </div>
+
+              {/* Nested dropdown for Career Tools */}
+              <div className="nested-dropdown">
+                <span className="nested-dropdown-trigger">
+                Career Studio
+                </span>
+                <div className="nested-dropdown-content">
+                  <a
+                    href="#"
+                    className={activePage === "career-mapper" ? "active" : ""}
+                    onClick={e => { e.preventDefault(); handleNavClick("career-mapper"); }}
+                  >
+                    Career Mapper
+                  </a>
+                  <a
+                    href="#"
+                    className={activePage === "skill-prediction" ? "active" : ""}
+                    onClick={e => { e.preventDefault(); handleNavClick("skill-prediction"); }}
+                  >
+                    AI Skill Prediction
+                  </a>
+                  <a
+                    href="#"
+                    onClick={e => { e.preventDefault(); handleNavClick("mentor-booking"); }}
+                  >
+                    Mentor Booking
                   </a>
                 </div>
               </div>
@@ -191,24 +214,24 @@ const Navbar = ({ onNavClick, activePage }) => {
               SERVICES <span className="dropdown-arrow">▾</span>
             </div>
             <div className={`mobile-service-links ${isMobileServicesOpen ? "open" : ""}`}>
-              <a
-                href="#"
-                className={activePage === "career-mapper" ? "active" : ""}
-                onClick={e => { e.preventDefault(); handleNavClick("career-mapper"); }}
-              >
-                Career Mapper
-              </a>
               <div className="mobile-nested-section">
                 <div className="mobile-nested-header">
-                  Career Tools
+                  Jobs
                 </div>
                 <div className="mobile-nested-links">
                   <a
                     href="#"
-                    className={activePage === "skill-prediction" ? "active" : ""}
-                    onClick={e => { e.preventDefault(); handleNavClick("skill-prediction"); }}
+                    className={activePage === "job-apply" ? "active" : ""}
+                    onClick={e => { e.preventDefault(); handleNavClick("job-apply"); }}
                   >
-                    AI Skill Prediction
+                    Job Apply
+                  </a>
+                  <a
+                    href="#"
+                    className={activePage === "ai-interview" ? "active" : ""}
+                    onClick={e => { e.preventDefault(); handleNavClick("ai-interview"); }}
+                  >
+                    AI Interview
                   </a>
                   <a
                     href="#"
@@ -226,15 +249,37 @@ const Navbar = ({ onNavClick, activePage }) => {
                   </a>
                   <a
                     href="#"
-                    onClick={e => { e.preventDefault(); handleNavClick("mentor-booking"); }}
-                  >
-                    Mentor Booking
-                  </a>
-                  <a
-                    href="#"
+                    className={activePage === "market-insights" ? "active" : ""}
                     onClick={e => { e.preventDefault(); handleNavClick("market-insights"); }}
                   >
                     Market Insights
+                  </a>
+                </div>
+              </div>
+              <div className="mobile-nested-section">
+                <div className="mobile-nested-header">
+                  Career Tools
+                </div>
+                <div className="mobile-nested-links">
+                  <a
+                    href="#"
+                    className={activePage === "career-mapper" ? "active" : ""}
+                    onClick={e => { e.preventDefault(); handleNavClick("career-mapper"); }}
+                  >
+                    Career Mapper
+                  </a>
+                  <a
+                    href="#"
+                    className={activePage === "skill-prediction" ? "active" : ""}
+                    onClick={e => { e.preventDefault(); handleNavClick("skill-prediction"); }}
+                  >
+                    AI Skill Prediction
+                  </a>
+                  <a
+                    href="#"
+                    onClick={e => { e.preventDefault(); handleNavClick("mentor-booking"); }}
+                  >
+                    Mentor Booking
                   </a>
                 </div>
               </div>
