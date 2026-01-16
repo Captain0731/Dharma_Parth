@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "buildCommand": "cd client && npm install && DISABLE_ESLINT_PLUGIN=true CI=false npm run build",
+  "buildCommand": "cd client && npm install && CI=false GENERATE_SOURCEMAP=false DISABLE_ESLINT_PLUGIN=true npm run build",
   "outputDirectory": "client/build",
   "installCommand": "cd client && npm install",
   "framework": null
