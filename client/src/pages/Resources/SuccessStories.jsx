@@ -26,10 +26,10 @@ const SuccessStories = () => {
 
         {/* HEADER */}
         <div className="successstories-header">
-          <span className="successstories-tag">DHARMAPATH</span>
+          <span className="successstories-tag">HIRE LOGIC</span>
           <h1>Success Stories from Real Careers</h1>
           <p className="successstories-subtitle">
-            Real people. Real career clarity. Real growth journeys powered by DharmaPath.
+            Real people. Real career clarity. Real growth journeys powered by Hire Logic.
           </p>
         </div>
 
@@ -41,7 +41,7 @@ const SuccessStories = () => {
             <div className="story-content">
               <div className="story-quote">“</div>
               <p className="story-text">
-                I was completely confused after graduation. DharmaPath helped me
+                I was completely confused after graduation. Hire Logic helped me
                 understand which skills I already had and what I needed next.
                 Within months, I had a clear roadmap and confidence about my career.
               </p>
@@ -61,7 +61,7 @@ const SuccessStories = () => {
             <div className="story-content">
               <div className="story-quote">“</div>
               <p className="story-text">
-                Instead of random courses, DharmaPath showed me a structured learning
+                Instead of random courses, Hire Logic showed me a structured learning
                 path. I finally understood *why* I was learning something and how
                 it connected to my future role.
               </p>
@@ -81,7 +81,7 @@ const SuccessStories = () => {
             <div className="story-content">
               <div className="story-quote">“</div>
               <p className="story-text">
-                DharmaPath helped me switch careers from mechanical engineering
+                Hire Logic helped me switch careers from mechanical engineering
                 to data analytics. The skill-gap analysis and roadmap made the
                 transition feel achievable instead of scary.
               </p>
@@ -101,7 +101,7 @@ const SuccessStories = () => {
             <div className="story-content">
               <div className="story-quote">“</div>
               <p className="story-text">
-                I used to compare myself with others and felt lost. DharmaPath
+                I used to compare myself with others and felt lost. Hire Logic
                 showed me my own strengths and a personalized path. That clarity
                 changed everything.
               </p>
@@ -121,7 +121,7 @@ const SuccessStories = () => {
             <div className="story-content">
               <div className="story-quote">“</div>
               <p className="story-text">
-                DharmaPath didn't just suggest careers — it explained the logic
+                Hire Logic didn't just suggest careers — it explained the logic
                 behind them. That transparency helped me trust my decisions
                 for the first time.
               </p>
@@ -142,7 +142,7 @@ const SuccessStories = () => {
               <div className="story-quote">“</div>
               <p className="story-text">
                 As a working professional, I needed direction — not motivation.
-                DharmaPath gave me a clear next step and realistic expectations.
+                Hire Logic gave me a clear next step and realistic expectations.
                 That honesty is what sets it apart.
               </p>
               <div className="story-author">
@@ -164,7 +164,7 @@ const SuccessStories = () => {
             <h2>Your Career Story Starts Here</h2>
             <p>
               Stop guessing your future. Get clarity, confidence, and a clear
-              roadmap — and become the next DharmaPath success story.
+              roadmap — and become the next Hire Logic success story.
             </p>
             <button className="cta-btn">
               Start Career Mapping →

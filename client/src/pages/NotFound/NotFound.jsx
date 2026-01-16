@@ -14,7 +14,7 @@ const NotFound = () => {
           <h2 className="notfound-subtitle">Page Not Found</h2>
           
           <p className="notfound-text">
-            DharmaPath is a platform that connects job seekers with employers.
+            Hire Logic is a platform that connects job seekers with employers.
             It is a platform that helps job seekers find jobs and employers find
             employees.
           </p>

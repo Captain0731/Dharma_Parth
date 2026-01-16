@@ -45,7 +45,7 @@ const Navbar = ({ onNavClick, activePage }) => {
           onClick={() => handleNavClick("home")}
         >
           <img src={logo} alt="Smart Skill to Career Mapper" />
-          Dharma<span>Path.</span>
+          Hire<span>Logic.</span>
         </div>
 
         {/* HAMBURGER MENU BUTTON */}

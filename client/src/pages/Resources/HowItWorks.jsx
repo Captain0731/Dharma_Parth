@@ -26,8 +26,8 @@ const HowItWorks = () => {
 
         {/* HEADER */}
         <div className="howitworks-header">
-          <span className="howitworks-tag">DHARMAPATH</span>
-          <h1>How It Works For DharmaPath</h1>
+          <span className="howitworks-tag">HIRE LOGIC</span>
+          <h1>How It Works For Hire Logic</h1>
           <p className="howitworks-subtitle">
             A simple, structured process to turn confusion into career clarity
           </p>
@@ -42,7 +42,7 @@ const HowItWorks = () => {
             <h3>Share Your Skills & Interests</h3>
             <p>
               Start by selecting your skills, interests, and career preferences.
-              This helps DharmaPath understand your background, strengths, and goals
+              This helps Hire Logic understand your background, strengths, and goals
               instead of guessing your future.
             </p>
             <div className="step-icon">🧠</div>
@@ -92,7 +92,7 @@ const HowItWorks = () => {
             <h2>Ready to Get Career Clarity?</h2>
             <p>
               Stop guessing your future. Discover the right career path, required
-              skills, and a clear action plan — all in one place with DharmaPath.
+              skills, and a clear action plan — all in one place with Hire Logic.
             </p>
             <button className="cta-btn">
               Start Career Mapping →

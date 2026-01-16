@@ -10,7 +10,7 @@ const ForgotPassword = ({ onBackSignIn }) => {
 
         <div className="auth-left">
           <h1>Forgot Password</h1>
-          <p>Recover access to your account securely. DharmaPath is a platform that connects job seekers with employers.
+          <p>Recover access to your account securely. Hire Logic is a platform that connects job seekers with employers.
             It is a platform that helps job seekers find jobs and employers find
             employees.
           </p>

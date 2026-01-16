@@ -10,7 +10,7 @@ const news = [
   {
     image: img1,
     tag: "CAREER INSIGHTS",
-    tagClass: "joblytic",
+    tagClass: "hirelogic",
     title: "How to choose the right career path based on your skills",
     desc:
       "Learn how skill assessment and interest mapping can help you make confident, data-driven career decisions instead of relying on guesswork.",
@@ -30,7 +30,7 @@ const news = [
   {
     image: img3,
     tag: "FUTURE CAREERS",
-    tagClass: "joblytic",
+    tagClass: "hirelogic",
     title: "Top in-demand career paths for the next 5 years",
     desc:
       "Explore high-growth career options, required skills, and future opportunities to plan your career with long-term clarity.",

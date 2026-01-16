@@ -30,7 +30,7 @@ const AboutGlass = () => {
       <div className="about-wrapper">
         {/* LEFT CONTENT */}
         <div className="about-content">
-          <span className="about-tag">About DharmaPath</span>
+          <span className="about-tag">About Hire Logic</span>
 
           <h1>
             Smart Careers. <br />
@@ -39,14 +39,14 @@ const AboutGlass = () => {
           </h1>
 
           <p className="about-lead">
-            DharmaPath is an intelligent career mapping platform designed to
+            Hire Logic is an intelligent career mapping platform designed to
             help students, freshers, and professionals discover personalized career
             paths based on their skills, interests, and market demand.
           </p>
 
           <p className="about-desc">
             Unlike traditional job portals that focus only on listings,
-            DharmaPath provides deep career clarity — including AI-powered skill predictions,
+            Hire Logic provides deep career clarity — including AI-powered skill predictions,
             automated resume analysis, intelligent job role matching, personalized learning roadmaps,
             and local market insights — so you can make confident, long-term career decisions.
           </p>
@@ -74,7 +74,7 @@ const AboutGlass = () => {
         <div className="about-glass-card">
           <div className="glass-card-header">
             <div className="glass-card-icon">✨</div>
-            <h3>Why Choose DharmaPath</h3>
+            <h3>Why Choose Hire Logic</h3>
           </div>
 
           <ul className="features-list">

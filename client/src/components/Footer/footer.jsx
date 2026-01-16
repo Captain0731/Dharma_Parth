@@ -12,7 +12,7 @@ const FooterGlass = ({ onNavClick, activePage }) => {
             className="fg-logo"
             onClick={() => onNavClick && onNavClick("home")}
           >
-            DharmaPath<span>.</span>
+            Hire Logic<span>.</span>
           </div>
 
           <p className="fg-desc">
@@ -21,7 +21,7 @@ const FooterGlass = ({ onNavClick, activePage }) => {
           </p>
 
           <p className="fg-copy">
-            © {new Date().getFullYear()} DharmaPath. All rights reserved.
+            © {new Date().getFullYear()} Hire Logic. All rights reserved.
           </p>
         </div>
 

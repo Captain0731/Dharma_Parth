@@ -22,12 +22,12 @@ const Signup = ({ onBackHome }) => {
           </div>
 
           <div className="brand">
-            <h2>DharmaPath.</h2>
+            <h2>Hire Logic.</h2>
           </div>
 
-          <h1>Welcome To DharmaPath</h1>
+          <h1>Welcome To Hire Logic</h1>
           <p>
-            Create your account to access DharmaPath tools and start your career journey with <strong>DharmaPath.</strong> DharmaPath is an intelligent career mapping platform that helps you discover personalized career paths based on your skills, interests, and goals.
+            Create your account to access Hire Logic tools and start your career journey with <strong>Hire Logic.</strong> Hire Logic is an intelligent career mapping platform that helps you discover personalized career paths based on your skills, interests, and goals.
             Get AI-powered career recommendations, skill gap analysis, resume insights, and job role matching to make confident career decisions. Start mapping your path to success today.
           </p>
 
@@ -39,7 +39,7 @@ const Signup = ({ onBackHome }) => {
         {/* RIGHT FORM PANEL */}
         <div className="signup-right">
           <h2>Create Account</h2>
-          <p className="subtitle">Join our DharmaPath platform</p>
+          <p className="subtitle">Join our Hire Logic platform</p>
 
           {error && <div className="signup-error" style={{ color: 'red', marginBottom: '1rem', padding: '0.5rem', background: '#ffe6e6', borderRadius: '4px' }}>{error}</div>}
 

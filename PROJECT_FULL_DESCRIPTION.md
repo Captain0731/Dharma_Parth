@@ -2,7 +2,7 @@
 
 ## 🎯 Project Overview
 
-**DharmaPath / Joblytic** is a comprehensive **Career Mapping and Development Platform** built with **React 19.2.3**. The application helps students, freshers, and professionals discover personalized career paths, analyze their skills, get job role matches, book mentors, and access market insights - all in one integrated platform.
+**Hire Logic** is a comprehensive **Career Mapping and Development Platform** built with **React 19.2.3**. The application helps students, freshers, and professionals discover personalized career paths, analyze their skills, get job role matches, book mentors, and access market insights - all in one integrated platform.
 
 ### Primary Purpose
 The platform serves as a **Smart Skill-to-Career Mapping System** that provides:
@@ -695,7 +695,7 @@ All files now follow career-focused naming conventions.
 
 ### Navigation
 - **Sticky Navbar**: Glassmorphism navbar with:
-  - Logo (DharmaPath/Joblytic)
+  - Logo (Hire Logic)
   - Main navigation links
   - Services dropdown with nested Career Tools menu
   - Resources dropdown menu
@@ -871,8 +871,8 @@ This project appears to be under development. License information should be adde
 ## 👥 Branding
 
 ### Current Brand Names
-- **Joblytic** - Used in footer
-- **DharmaPath** - Used in navbar logo
+- **Hire Logic** - Used in footer
+- **Hire Logic** - Used in navbar logo
 - Appears to be transitioning between names or using both
 
 ### Logo Assets

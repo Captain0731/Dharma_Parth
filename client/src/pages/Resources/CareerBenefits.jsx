@@ -27,9 +27,9 @@ const CareerBenefits = () => {
         {/* HEADER */}
         <div className="whyinvest-header">
           <span className="whyinvest-tag">INVESTMENT</span>
-          <h1>Why Invest in DharmaPath?</h1>
+          <h1>Why Invest in Hire Logic?</h1>
           <p className="whyinvest-subtitle">
-            DharmaPath is a next-generation career intelligence platform that
+            Hire Logic is a next-generation career intelligence platform that
             connects skills with real job outcomes. Built for scale, trust,
             and long-term impact in the global hiring ecosystem.
           </p>
@@ -51,7 +51,7 @@ const CareerBenefits = () => {
             <div className="benefit-icon">🤖</div>
             <h3>AI-Powered Career Intelligence</h3>
             <p>
-              DharmaPath leverages AI-driven insights for career mapping,
+              Hire Logic leverages AI-driven insights for career mapping,
               job matching, and skill prediction.
             </p>
           </div>
@@ -115,7 +115,7 @@ const CareerBenefits = () => {
           <div className="cta-glass-card">
             <h2>Be Part of the Future of Hiring</h2>
             <p>
-              Partner with DharmaPath and invest in a platform shaping the future
+              Partner with Hire Logic and invest in a platform shaping the future
               of careers and recruitment.
             </p>
             <button className="cta-btn">

@@ -1,7 +1,7 @@
-## 🚀 Project: DharmaPath / Joblytic – Career Mapping & Development Platform
+## 🚀 Project: Hire Logic – Career Mapping & Development Platform
 
 ### 1. One‑Line Pitch
-**DharmaPath** is an AI-inspired, fully responsive career‑mapping platform that helps students and professionals discover the right career path, see their skill gaps, analyze resumes, and get job role matches – all in a single, beautiful web app.
+**Hire Logic** is an AI-inspired, fully responsive career‑mapping platform that helps students and professionals discover the right career path, see their skill gaps, analyze resumes, and get job role matches – all in a single, beautiful web app.
 
 ---
 

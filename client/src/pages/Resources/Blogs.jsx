@@ -10,9 +10,9 @@ const blogPosts = [
   {
     image: news1,
     date: "January 15, 2024",
-    title: "How to achieve financial independence through DharmaPath",
+    title: "How to achieve financial independence through Hire Logic",
     desc:
-      "DharmaPath is a platform that connects job seekers with employers and helps them grow faster.",
+      "Hire Logic is a platform that connects job seekers with employers and helps them grow faster.",
   },
   {
     image: news2,
@@ -24,16 +24,16 @@ const blogPosts = [
   {
     image: news3,
     date: "January 5, 2024",
-    title: "Learn how DharmaPath really shapes our future",
+    title: "Learn how Hire Logic really shapes our future",
     desc:
       "See how smart career decisions can shape your professional journey.",
   },
   {
     image: news1,
     date: "December 28, 2023",
-    title: "How to get a job using DharmaPath",
+    title: "How to get a job using Hire Logic",
     desc:
-      "Step-by-step guide to land your dream job faster using DharmaPath tools.",
+      "Step-by-step guide to land your dream job faster using Hire Logic tools.",
   },
   {
     image: news2,
@@ -75,10 +75,10 @@ const Blogs = () => {
         </button>
         {/* HEADER */}
         <div className="blogs-header">
-          <span className="blogs-tag">DHARMAPATH</span>
+          <span className="blogs-tag">HIRE LOGIC</span>
           <h1>Blogs & Insights</h1>
           <p className="blogs-subtitle">
-            Stay updated with the latest trends, tips, and insights from DharmaPath
+            Stay updated with the latest trends, tips, and insights from Hire Logic
           </p>
         </div>
 
@@ -88,7 +88,7 @@ const Blogs = () => {
             <article className="blog-card" key={index}>
               <div className="blog-image">
                 <img src={blog.image} alt={blog.title} />
-                <span className="blog-category">DHARMAPATH</span>
+                <span className="blog-category">HIRE LOGIC</span>
               </div>
 
               <div className="blog-content">

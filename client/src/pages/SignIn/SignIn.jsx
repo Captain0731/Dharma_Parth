@@ -31,11 +31,11 @@ const SignIn = ({ onSignupClick, onForgotPassword }) => {
             <div className="animated-ball ball3"></div>
           </div>
             <div className="brand">
-              <h2>DharmaPath.</h2>
+              <h2>Hire Logic.</h2>
             </div>
-            <h1>Welcome Back To DharmaPath</h1>
+            <h1>Welcome Back To Hire Logic</h1>
             <p>
-              Sign in to your account to access DharmaPath tools and continue your career journey with <strong>DharmaPath.</strong> DharmaPath is an intelligent career mapping platform that helps you discover personalized career paths based on your skills, interests, and goals.
+              Sign in to your account to access Hire Logic tools and continue your career journey with <strong>Hire Logic.</strong> Hire Logic is an intelligent career mapping platform that helps you discover personalized career paths based on your skills, interests, and goals.
               Get AI-powered career recommendations, skill gap analysis, resume insights, and job role matching to make confident career decisions. Continue mapping your path to success.
             </p>
           <div className="back-btn-center">
